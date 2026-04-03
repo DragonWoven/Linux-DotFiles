@@ -1,7 +1,7 @@
 #!/bin/bash
 
 {{ if or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.osRelease.id "cachyos") (and (hasKey .chezmoi.osRelease "id_like") (contains "arch" .chezmoi.osRelease.id_like)) -}}
-    # This runs on Arch, CachyOS, or any distro that has "arch" in its id_like field
+    sudo pacman -Sy
     sudo pacman -S --needed --noconfirm {{ range .packages }}{{ . }} {{ end }}
 {{ else -}}
     echo "Distro ({{ .chezmoi.osRelease.id }}) is not supported by this install script"
