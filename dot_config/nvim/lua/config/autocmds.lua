@@ -6,3 +6,10 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+-- Fix for chezmoi --watch within LazyVim
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { os.getenv("HOME") .. "/.local/share/chezmoi/*" },
+  callback = function()
+    vim.opt_local.backupcopy = "yes"
+  end,
+})
