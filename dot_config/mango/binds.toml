@@ -1,0 +1,33 @@
+[var]
+term = "kitty"
+browser = "firefox"
+filemanager = "thunar"
+launcher = "wofi --show drun"
+[bind.default]
+"ALT+Return" = "spawn,$term"
+"ALT+b" = "spawn,$browser"
+"SUPER+e" = "spawn,$filemanager"
+"SUPER+a" = "spawn,$launcher"
+"SUPER+r" = "reload_config"
+"ALT+q" = "killclient"
+"SUPER+m" = "quit"
+
+#Change view
+"SUPER+1" = "view,1,0"
+"SUPER+2" = "view,2,0"
+"SUPER+3" = "view,3,0"
+"SUPER+4" = "view,4,0"
+"SUPER+5" = "view,5,0"
+"SUPER+6" = "view,6,0"
+"SUPER+7" = "view,7,0"
+"SUPER+8" = "view,8,0"
+"SUPER+9" = "view,9,0"
+#Volume
+"NONE+XF86AudioRaiseVolume" = "spawn,wpctl set-volume @DEFAULT_SINK@ 5%+"
+"NONE+XF86AudioLowerVolume" = "spawn,wpctl set-volume @DEFAULT_SINK@ 5%-"
+"NONE+XF86AudioMute" = "spawn,wpctl set-volume @DEFAULT_SINK@ toggle"
+# bind=NONE,XF86AudioRaiseVolume,spawn,wpctl set-volume @DEFAULT_SINK@ 5%+
+# bind=NONE,XF86AudioLowerVolume,spawn,wpctl set-volume @DEFAULT_SINK@ 5%-
+# bind=NONE,XF86AudioMute,spawn,wpctl set-mute @DEFAULT_SINK@ toggle
+# bind=SHIFT,XF86AudioMute,spawn,wpctl set-mute @DEFAULT_SOURCE@ toggle
+

@@ -1,0 +1,25 @@
+[config]
+version_check = false
+
+# Material You generation algorithm style 
+# Options: SchemeVibrant, SchemeContent, SchemeExpressive, SchemeFidelity, SchemeNeutral, etc.
+# SchemeVibrant or SchemeContent usually yields rich, dark-rice-friendly accents.
+type = "SchemeVibrant" 
+contrast = 1.0
+
+[config.wallpaper]
+# Whether to set the wallpaper automatically when running `matugen image <path>`
+set = true
+# Make sure this matches your actual wallpaper daemon (e.g., awww, swww, hyprpaper)
+command = "awww img --transition-type center {{ image }}"
+
+# Quickshell Integration Template
+[templates.quickshell]
+input_path = "~/.config/matugen/templates/quickshell_colors.qml"
+output_path = "~/.config/quickshell/theme/Colors.qml"
+[templates.mango]
+input_path = "~/.config/matugen/templates/mango.conf"
+output_path = '~/.config/mango/colors.conf'
+post_hook = 'mmsg dispatch reload_config'
+# Optional: Automatically trigger a reload or notification after generation if needed
+# post_hook = 'echo "Matugen generated new theme for Quickshell!"'
