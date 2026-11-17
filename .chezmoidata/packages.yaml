@@ -5,3 +5,4 @@ packages:
   - matugen
   - quickshell
   - hypridle
+  - tree-sitter-cli
